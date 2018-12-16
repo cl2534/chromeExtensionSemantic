@@ -1,0 +1,76 @@
+<!-- {% extends 'base.html' %}
+
+{% block content %}
+<div><h1>Shared with me </h1></div>
+<div>
+{% for shared in object_list %}
+<div class='img center-block' style='display:flex;flex-direction:column;align-items:center;'>
+  <a href='{{ shared.image.get_absolute_url }}'>
+    <figure class='figure'>
+      {% include 'image_fragment.html' with bucket='thumb' url=shared.image.thumbnail_url %}
+      <figcaption class='figure-caption-text-right'>{{ shared.image.title }} by <a href='{% url "gallery" shared.image.user.pk %}'>{{ shared.image.user.username }}</a></figcaption>
+    </figure>
+  </a>
+  <div>(Shared by {{ shared.shared_by.username }})</div>
+  <hr class='imghr'>
+</div>
+{% endfor %}
+</div>
+{% endblock content %} -->
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.9/semantic.min.css"/>
+</head>
+<body>
+  <!-- {% extends 'base.html' %}
+
+  {% block content %} -->
+  <div class="ui inverted menu">
+    <div class="item">
+      <h1>Image Scrapper</h1>
+    </div>
+    <a class="item">Public Gallery</a>
+    <a class="item">Shared Gallery</a>
+    <a class="item">My Gallery</a>
+  </div>
+
+  <div class="ui link cards">
+    <!-- {% for shared in object_list %} -->
+    <div class="card">
+      <div class="image">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRV_yCGaZRh4O5T3EqLD161jmUA-c7uxLxXXY66OwKictmZxn496A">
+        <!-- {{ shared.image.get_absolute_url }} -->
+      </div>
+      <div class="content">
+        <div class="header">IMAGE TITLE By </div>
+          <!-- {{ shared.image.title }} By {{ shared.image.user.username }}-->
+      </div>
+
+      <div class="extra content">
+        <span class="right floated">
+          Shared By Chang
+          <!-- Shared by {{ shared.shared_by.username }} -->
+        </span>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="image">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRV_yCGaZRh4O5T3EqLD161jmUA-c7uxLxXXY66OwKictmZxn496A">
+        <!-- {{ shared.image.get_absolute_url }} -->
+      </div>
+      <div class="content">
+        <div class="header">IMAGE TITLE By </div>
+          <!-- {{ shared.image.title }} By {{ shared.image.user.username }}-->
+      </div>
+
+      <div class="extra content">
+        <span class="right floated">
+          Shared By Chang
+          <!-- Shared by {{ shared.shared_by.username }} -->
+        </span>
+      </div>
+    </div>
+
+
+    </div>
+</body>

@@ -1,0 +1,63 @@
+<!-- {% extends 'base.html' %}
+
+{% block content %}
+{% ifequal gallerytype 'public' %}
+<div><h1>Public Gallery</h1></div>
+{% endifequal %}
+{% ifequal gallerytype 'user' %}
+<div><h1>{{ username }}'s Gallery</h1></div>
+{% endifequal %}
+<div>
+  {% for image in object_list %}
+  <div class='col-lg-3 col-md-4 col-xs-6 thumb'>
+    <a href='{{ image.get_absolute_url }}'>
+      <figure class='figure'>
+        {% include 'image_fragment.html' with bucket='thumb' url=image.thumbnail_url %}
+        <figcaption class='figure-caption-text-left'>{{ image.title }} by {{ image.user.username }}</figcaption>
+      </figure>
+    </a>
+  </div>
+  {% endfor %}
+</div>
+{% endblock content %} -->
+
+
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.9/semantic.min.css"/>
+</head>
+<body>
+  <!-- {% extends 'base.html' %}
+
+  {% block content %} -->
+  <div class="ui inverted menu">
+    <div class="item">
+      <h1>Image Scrapper</h1>
+    </div>
+    <a class="item">Public Gallery</a>
+    <a class="item">Shared Gallery</a>
+    <a class="item">My Gallery</a>
+  </div>
+
+  <div class="ui link cards">
+  <!-- {% for image in object_list %} -->
+    <div class="card">
+      <div class="image">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRV_yCGaZRh4O5T3EqLD161jmUA-c7uxLxXXY66OwKictmZxn496A">
+        <!-- {{ image.get_absolute_url }} -->
+      </div>
+      <div class="content">
+        <!-- {% include 'image_fragment.html' with bucket='thumb' url=image.thumbnail_url %} -->
+        <div class="header">IMAGE TITLE By </div>
+          <!-- {{ image.title }} By {{ image.user.username }}-->
+      </div>
+
+      <div class="extra content">
+        <button id = 'share_btn' class="ui primary button">
+          Share
+        </button>
+      </div>
+    </div>
+    <!-- {% endfor %} -->
+    </div>
+    <!-- {% endblock content %}  -->
+</body>
